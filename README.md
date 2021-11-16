@@ -6,13 +6,13 @@ Deep neural networks (DNNs) have driven the automation of numerous web applicati
 The overall framework of this project is designed as follows
 1. The attacker file is to store the relevant attack model and files
 
-2. The defense file is to store the defense model parameters corresponding to the model
+2. The **defense** file is to store the defense model parameters corresponding to the model
 
-3. The dataset file is used to hold the dataset
+3. The **dataset** file is used to hold the dataset
 
-4. The Struct file is to store the files required for DST Structure
+4. The **Struct** file is to store the files required for DST Structure
 
-5. The util is the storage of the relevant model adjustment process algorithm
+5. The **util** is the storage of the relevant model adjustment process algorithm
 
 ### Getting Started
 1、Clone this repository:
