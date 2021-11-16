@@ -17,7 +17,7 @@ The overall framework of this project is designed as follows
 ### Getting Started
 1、Clone this repository:
 '''
-git clone https://github.com/ARDST/ARDST.git
+git clone https://github.com/ARDST/ARDST_Algo.git
 '''
 
 2、Make sure you meet package requirements by running:
