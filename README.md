@@ -25,6 +25,8 @@ git clone https://github.com/ARDST/ARDST_Algo.git
 pip install -r requirements.txt
 '''
 
+3、 python train_ARDST.py
+
 ### Example
 
 Here we will show how to train a provably Deep Symbolic Tree defense model. We will use a DST defense FGSM as an example
