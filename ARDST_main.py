@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 from torchvision import models
 warnings.filterwarnings("ignore")
-from util.structure.Dst import Dst
+from util.structure.Vtree import Vtree as Dst
 from defense.Mnist_mult import read_data_sets
 
 from util.algo.LogisticCircuit import LogisticCircuit as DST
