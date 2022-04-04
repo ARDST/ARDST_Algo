@@ -25,7 +25,7 @@ git clone https://github.com/ARDST/ARDST_Algo.git
 pip install -r requirements.txt
 '''
 
-3、 python train_ARDST.py
+3、 python ARDST_main.py
 
 ### Example
 
