@@ -1,6 +1,6 @@
 c ids of vtree nodes start at 0
 c ids of variables start at 1
-c vtree nodes appear bottom-up, children before parents
+c vtree nodes appear bottom-up, children c before parents k
 c
 c file syntax:
 c vtree number-of-nodes-in-vtree
