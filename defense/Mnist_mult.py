@@ -115,7 +115,9 @@ def crop_augment(images, target_side_length=26):
     augmented_images = np.reshape(augmented_images, (-1, 784))
     return augmented_images
 
-def read_data_sets(dir, percentage=1.0, training_type="",testing_type=""):
+def read_data_sets(dir, percentage = 1.0, training_type = "",testing_type = "", eps= 0):
+    
+    eps_values = eps
 
     train_image_file = "train-images-idx3-ubyte.gz"
     train_label_file = "train-labels-idx1-ubyte.gz"
@@ -133,7 +135,7 @@ def read_data_sets(dir, percentage=1.0, training_type="",testing_type=""):
     if training_type == "FGSM":
         print("Training: This is the FGSM attack")
         Fgsm_train_num = len(train_images_norm)
-        Fgsm_train_images,Fgsm_train_labels_norm,Fgsm_train_labels_zero = FGSM_Mnist_train(Fgsm_train_num)
+        Fgsm_train_images,Fgsm_train_labels_norm,Fgsm_train_labels_zero = FGSM_Mnist_train(Fgsm_train_num, eps_values)
 
         train_images = np.concatenate((train_images_norm, Fgsm_train_images), axis=0)
         train_labels = np.concatenate((train_labels_norm, Fgsm_train_labels_norm), axis=0)
@@ -143,7 +145,7 @@ def read_data_sets(dir, percentage=1.0, training_type="",testing_type=""):
     if testing_type == "FGSM":
         print("Testing: This is the FGSM attack")
         Fgsm_test_num = len(test_images_norm)
-        Fgsm_test_images, Fgsm_test_labels_norm, Fgsm_test_labels_zero = FGSM_Mnist_test(Fgsm_test_num)
+        Fgsm_test_images, Fgsm_test_labels_norm, Fgsm_test_labels_zero = FGSM_Mnist_test(Fgsm_test_num, eps_values)
 
         test_images = np.concatenate((test_images_norm, Fgsm_test_images), axis=0)
         test_labels = np.concatenate((test_labels_norm, Fgsm_test_labels_norm), axis=0)
