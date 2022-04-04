@@ -9,7 +9,7 @@ warnings.filterwarnings("ignore")
 from util.structure.Vtree import Vtree
 from defense.Mnist_mult import read_data_sets
 
-from util.algo.LogisticCircuit import LogisticCircuit
+from util.algo.LogisticCircuit import LogisticCircuit as DST
 
 FLAGS = None
 model = models.alexnet(pretrained=True)
@@ -31,11 +31,11 @@ def main():
 
     if FLAGS.circuit != "":
         with open(FLAGS.circuit, "r") as circuit_file:
-            circuit = LogisticCircuit(vtree, FLAGS.num_classes, circuit_file=circuit_file)
+            circuit = DST(vtree, FLAGS.num_classes, circuit_file=circuit_file)
             print("The saved circuit is successfully loaded.")
             data.train.features = circuit.calculate_features(data.train.images)
     else:
-        circuit = LogisticCircuit(vtree, FLAGS.num_classes)
+        circuit = DST(vtree, FLAGS.num_classes)
         data.train.features = circuit.calculate_features(data.train.images)
         circuit.learn_parameters(data.train, 50)
 
