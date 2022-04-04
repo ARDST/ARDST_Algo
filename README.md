@@ -4,7 +4,7 @@ Deep neural networks (DNNs) have driven the automation of numerous web applicati
 ## File
 
 The overall framework of this project is designed as follows
-1. The attacker file is to store the relevant attack model and files
+1. The **attacker** file is to store the relevant attack model and files
 
 2. The **defense** file is to store the defense model parameters corresponding to the model
 
@@ -16,16 +16,22 @@ The overall framework of this project is designed as follows
 
 ### Getting Started
 1、Clone this repository:
+
 '''
 git clone https://github.com/ARDST/ARDST_Algo.git
 '''
 
 2、Make sure you meet package requirements by running:
+
 '''
 pip install -r requirements.txt
 '''
 
-3、 python ARDST_main.py
+3、  running ARDST model
+
+'''
+python ARDST_main.py
+'''
 
 ### Example
 
