@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 from torchvision import models
 warnings.filterwarnings("ignore")
-from util.structure.Vtree import Vtree
+from util.structure.Dst import Dst
 from defense.Mnist_mult import read_data_sets
 
 from util.algo.LogisticCircuit import LogisticCircuit as DST
@@ -27,15 +27,15 @@ def main():
         print("This dataset is Mnist")
         data = read_data_sets(FLAGS.data_path, FLAGS.percentage, FLAGS.training_type, FLAGS.testing_type, FLAGS.attack_eps)
 
-    vtree = Vtree.read(FLAGS.vtree)
+    dst = Dst.read(FLAGS.dst)
 
     if FLAGS.circuit != "":
         with open(FLAGS.circuit, "r") as circuit_file:
-            circuit = DST(vtree, FLAGS.num_classes, circuit_file=circuit_file)
+            circuit = DST(dst, FLAGS.num_classes, circuit_file=circuit_file)
             print("The saved circuit is successfully loaded.")
             data.train.features = circuit.calculate_features(data.train.images)
     else:
-        circuit = DST(vtree, FLAGS.num_classes)
+        circuit = DST(dst, FLAGS.num_classes)
         data.train.features = circuit.calculate_features(data.train.images)
         circuit.learn_parameters(data.train, 50)
 
@@ -109,14 +109,14 @@ if __name__ == "__main__":
                         choices = [10, 10, 43], 
                         help = "Number of classes in the classification task.")
 
-    parser.add_argument("--vtree", type = str,
-                        default = "Struct/DLTreeStr_784.vtree", 
-                        help = "Path for vtree.")
+    parser.add_argument("--dst", type = str,
+                        default = "Struct/DLTreeStr_784.dst", 
+                        help = "Path for dst.")
 
     parser.add_argument("--circuit", type = str,
                         default = "",
                         help = "[Optional] File path for the saved logistic circuit to load. "
-                        "Note this circuit has to be based on the same vtree as provided in --vtree.", )
+                        "Note this circuit has to be based on the same dst as provided in --dst.", )
 
     parser.add_argument("--num_structure_learning_iterations", type = int,
                         default = 200,
