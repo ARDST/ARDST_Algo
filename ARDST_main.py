@@ -110,7 +110,7 @@ if __name__ == "__main__":
                         help = "Number of classes in the classification task.")
 
     parser.add_argument("--dst", type = str,
-                        default = "Struct/DLTreeStr_784.dst", 
+                        default = "Struct/DLTreeStr_784.vtree", 
                         help = "Path for dst.")
 
     parser.add_argument("--circuit", type = str,
