@@ -100,8 +100,8 @@ if __name__ == "__main__":
                         help = "There are about attack model eps values")
     
     parser.add_argument("--data_path", type = str,  
-                        default = "./dataset/Mnist/", 
-                        choices = ["./dataset/Mnist/", "./dataset/FashionMnist/", "./dataset/TrafficSigns"], 
+                        default = "dataset/Mnist/MNIST/raw/", 
+                        choices = ["./dataset/Mnist/MNIST/raw/", "./dataset/FashionMnist/", "./dataset/TrafficSigns"], 
                         help = "Directory for the stored input data.")
 
     parser.add_argument("--num_classes", type = int, 
