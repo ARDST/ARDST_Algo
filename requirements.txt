@@ -6,3 +6,4 @@ opencv-python
 matplotlib
 keras
 tensorflow
+torchattacks
