@@ -136,7 +136,7 @@ if __name__ == "__main__":
                         help = "[Optional] The number of splits in one iteration of structure learning." "It default value is 3.", )
 
     parser.add_argument("--percentage", type = float,
-                        default = 0.001,
+                        default = 1,
                         help="[Optional] The percentage of the training dataset that will be used. " "Its default value is 100%%. 1.0",)
 
     parser.add_argument("--save_path", type = str, 
